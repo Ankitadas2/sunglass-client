@@ -52,6 +52,7 @@ function Dashboard(props) {
 
   const drawer = (
     <div>
+      <h1 style={{color:'green',fontSize:'20px'}}>Welcome to Our website</h1>
       <Toolbar />
       <Divider />
       <Link to="/explore">
