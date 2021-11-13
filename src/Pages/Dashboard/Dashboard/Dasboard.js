@@ -60,7 +60,7 @@ function Dashboard(props) {
           <Link to={`${url}`}>
             <Button color="inherit">Dashboard</Button>
           </Link>
-          {user?.email ?
+          {user?.email && !admin ?
               <Box>
                <Link to="/orders" >
             <Button color="inherit">My Orders</Button>
@@ -69,12 +69,20 @@ function Dashboard(props) {
             <Button color="inherit">Pay</Button>
           </Link>
               <NavLink  to="/review"><Button color="inherit">Reviews</Button></NavLink>
-            <Button onClick={logOut} color="inherit">Logout</Button>
             </Box>
             :
             <NavLink style={{textDecoration:'none', color:'white'}} to="/login"><Button color="inherit">Login</Button></NavLink>     
           }
           
+       { user?.email ?
+       <Box>
+         <Button variant="contained" onClick={logOut} >Logout</Button>
+       </Box>
+       :  
+       <NavLink style={{textDecoration:'none', color:'white'}} to="/login"><Button color="inherit">Login</Button></NavLink>
+       }
+
+
          {admin && <Box>
           <Link to={`${url}/makeAdmin`}>
             <Button  color="inherit">Make Admin</Button>

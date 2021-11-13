@@ -7,7 +7,7 @@ import useAuth from './../../../hooks/useAuth';
 
 const Login = () => {
     const [loginData, setLoginData] = useState({});
-    const { user, loginUser,signInWithGoogle, isLoading, authError } = useAuth();
+    const { user, loginUser,signInWithGoogle,admin, isLoading, authError } = useAuth();
 
     const location = useLocation();
     const history = useHistory();
@@ -20,10 +20,11 @@ const Login = () => {
         setLoginData(newLoginData);
     }
     const handleLoginSubmit = e => {
-        loginUser(loginData.email, loginData.password, location, history);
+       
+        loginUser(loginData.email, loginData.password, location, history,admin);
         e.preventDefault();
     }
-
+// Google sign section:
     const handleGoogleSignIn=()=>{
         signInWithGoogle(location,history)
     }

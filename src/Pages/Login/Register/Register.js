@@ -63,7 +63,7 @@ const Register = () => {
                             onBlur={handleOnBlur}
                             variant="standard" />
 
-                        <Button sx={{ width: '75%', m: 1 }} type="submit" variant="contained">Register</Button>
+                        <Button sx={{ width: '50%', m: 1 , color:'white',backgroundColor:'green' }} type="submit" variant="contained">Register</Button>
                         <NavLink
                             style={{ textDecoration: 'none' }}
                             to="/login">
@@ -74,9 +74,6 @@ const Register = () => {
                     {user?.email && <Alert severity="success">User Created successfully!</Alert>}
                     {authError && <Alert severity="error">{authError}</Alert>}
                 </Grid>
-                {/* <Grid item xs={12} md={6}>
-                    <img style={{ width: '100%' }} src={login} alt="" />
-                </Grid> */}
             </Grid>
         </Container>
     );

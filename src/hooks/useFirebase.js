@@ -43,7 +43,7 @@ const useFirebase = () => {
         setIsLoading(true);
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                const destination = location?.state?.from || '/';
+                const destination = location?.state?.from || '/dashboard';
                 history.replace(destination);
                 setAuthError('');
             })
@@ -81,6 +81,8 @@ const useFirebase = () => {
         });
         return () => unsubscribed;
     }, [])
+ 
+// Admin section:
 
 useEffect(()=>{
 fetch(`https://frozen-journey-92434.herokuapp.com/users/${user?.email}`)
@@ -88,7 +90,7 @@ fetch(`https://frozen-journey-92434.herokuapp.com/users/${user?.email}`)
 .then(data=>setAdmin(data.admin))
 },[user?.email])
 
-
+// LogOut section part:
     const logOut = () => {
         setIsLoading(true);
         signOut(auth).then(() => {
