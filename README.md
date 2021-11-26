@@ -12,10 +12,12 @@
 New Items are available in our website You can buy products.
  <!-- Benfits of this website -->
  * This website create basically to know about sunglass
- * So much brand is inculded in this website
+ * 	An authenticated user can buy the product from this website. Firstly he/she has to place an order.
  * You can buy any product from this website
- * You buy product with discount
- * Amazing products are included in this website
+ * User can see their products after placeing the order 
+ * User also delete any product.
+ * Admin panel is included.
+ * Admin can see all products which are selected by users and also delete any product.
 
 
 
