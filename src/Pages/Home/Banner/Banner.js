@@ -9,31 +9,40 @@ import { Repeat } from '@mui/icons-material';
 
 const bannerBg = {
     // background: `url(${bg3})`,
-    backgroundrepeat:'no-repeat',
-    width:'900px'
+    // backgroundrepeat:'no-repeat',
+    // width:'900px'
     
 
 }
 
 const verticalCenter = {
-    // display: 'flex',
-    // alignItems: 'center',
-    // height: 400
+    display: 'flex',
+    alignItems: 'center',
+    height: 400
     
 }
 
 const Banner = () => {
     return (
         <Container style={bannerBg} sx={{ flexGrow: 1 }}>
-            <Grid container spacing={2}>
-            <Grid item xs={4} md={12} style={verticalCenter} >
+            <Grid container spacing={3}>
+            
+            <Grid item xs={12} md={6} style={verticalCenter} >
                     <img style={{ width: '650px' }} src={bg3} alt="" />
-                    <Typography variant="h3">
-                            SunGlass Store with new item
-                        </Typography>
                 </Grid>
                 
-
+                <Grid item style={{ ...verticalCenter, textAlign: 'left' }} xs={12} md={6}>
+                    <Box>
+                        <Typography variant="h3" sx={{  color: 'green',marginLeft:'24px' }}>
+                            Glassy Sunglass Shop <br />
+                            
+                        </Typography>
+                        <Typography variant="h3" sx={{ my: 3, fontSize: 23, fontWeight: 300, color: 'gray',marginLeft:'19px' }}>
+                            Sunglass thats are very fashionable design.All are collected for you choose any style and get fashionable.
+                        </Typography>
+                        <Button variant="contained" style={{ backgroundColor: '#5CE7ED', marginLeft:'25px'}}>Learn More</Button>
+                    </Box>
+                </Grid>
             </Grid>
         </Container>
     );
